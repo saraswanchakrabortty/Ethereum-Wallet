@@ -51,7 +51,7 @@ const Welcome = () => {
           </h1>
           <p>
             Explore the crypto world. Buy and sell cryptocurrencies easily on
-            Krypto.
+            EtherForge.
           </p>
           {!currentAccount && (
             <button className="glassBtn" type="button" onClick={connectWallet}>
