@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import '../styles/Transactions.scss'
 
 import { TransactionContext } from "../context/TransactionContext";
 
@@ -10,7 +11,7 @@ const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword,
   const gifUrl = useFetch({ keyword });
 
   return (
-    <div className="bg-[#181918] m-4 flex flex-1
+    <div className="transaction bg-[#181918] m-4 flex flex-1
       2xl:min-w-[450px]
       2xl:max-w-[500px]
       sm:min-w-[270px]

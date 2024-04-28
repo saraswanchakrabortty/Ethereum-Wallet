@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//Typography
+:root{
+    --primaryFont : "Inter", sans-serif;
+    --secondaryFont : "Montserrat", sans-serif;
+}
+
+// Colors
+:root{
+    --light : #f1fff9;
+    --color1 : #1ff9ab;
+    --color2 : #082c1f;
+    --color2T :rgba(6, 34, 23, 0.658);
+    --dark : #03160f;
+    --gray : #96c6b5;
+}
+
+// Font Sizes
+:root{
+    --small : 1rem;
+    --tiny : 0.833rem;
+    --medium : 1.125rem;
+    --large : 2.488rem;
+    --xl : 2.986rem;
+    --xxl : 3.625rem;
+}
+
+//Misc
+:root{
+    --transition :  0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    --margin : 70px;
+    --gradient1 : linear-gradient(135deg, #80e2c0cf 10%, #03160f00 80%);
+    --navHeight : 70px;
+}
+
+//Glassmorphism Btn
+.glassBtn{
+    box-shadow: 0 0 2px var(--gray);
+    backdrop-filter: blur(50px);
+    cursor: pointer;
+    background-image: var(--gradient1);
+    border-radius: 99999px;
+    transform: scale(100%);
+    transition: var(--transition);
+}
+
+.glassBtn:hover{
+    transform: scale(105%);
+    transition: var(--transition);
+}
+
+section{
+    padding: 80px var(--margin);
+}
+
+@media only screen and (max-width: 1025px){
+    :root{
+        --small : 1rem !important;
+        --tiny : 0.833rem !important;
+        --medium : 1rem !important;
+        --large : 1.5rem !important;
+        --xl : 2.986rem !important;
+        --xxl : 3.625rem !important;
+        --margin : 48px !important;
+    }
+}
+
+@media only screen and (max-width: 431px){
+    :root{
+        --small : 0.75rem !important;
+        --tiny : 0.5rem !important;
+        --medium : 1rem !important;
+        --large : 1.5rem !important;
+        --xl : 1.833rem !important;
+        --xxl : 2.125rem !important;
+        --margin : 24px !important;
+    }
+}

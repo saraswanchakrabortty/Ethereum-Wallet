@@ -1,11 +1,12 @@
 import { Navbar, Welcome, Footer, Services} from "./components";
+import './styles/Global.scss';
+import './styles/App.scss';
+import Underline from "./components/Underline";
 
 const App = () => (
-  <div className="min-h-screen">
-    <div className="gradient-bg-welcome">
-      <Navbar />
-      <Welcome />
-    </div>
+  <div className="app">
+    <Navbar />
+    <Welcome />
     <Services />
     <Footer />
   </div>
