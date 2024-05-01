@@ -1,0 +1,37 @@
+.message-display{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color:var(--light);
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+
+    >div{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        p{
+            font-family: var(--secondaryFont);
+        }
+    }
+    button{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width:640px){
+    .message-display{
+        gap: 5px;
+        width: calc(100% - (var(--margin) * 2)) !important;
+        >div{
+            flex-direction: column;
+        }
+    }
+}
