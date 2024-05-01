@@ -3,6 +3,8 @@ import { ethers } from "ethers";
 
 import { contractABI, contractAddress } from "../utils/constants";
 
+import MessageDisplay from "../components/messageDisplay";
+
 export const TransactionContext = React.createContext();
 
 const { ethereum } = window;
@@ -21,6 +23,7 @@ export const TransactionsProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [transactionCount, setTransactionCount] = useState(localStorage.getItem("transactionCount"));
   const [transactions, setTransactions] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e, name) => {
     setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
@@ -55,7 +58,7 @@ export const TransactionsProvider = ({ children }) => {
 
   const checkIfWalletIsConnect = async () => {
     try {
-      if (!ethereum) return alert("Please install MetaMask.");
+      if (!ethereum) return setErrorMessage("Please install MetaMask.");
 
       const accounts = await ethereum.request({ method: "eth_accounts" });
 
@@ -88,7 +91,7 @@ export const TransactionsProvider = ({ children }) => {
 
   const connectWallet = async () => {
     try {
-      if (!ethereum) return alert("Please install MetaMask.");
+      if (!ethereum) return setErrorMessage("Please install MetaMask.");
 
       const accounts = await ethereum.request({ method: "eth_requestAccounts", });
 
@@ -145,6 +148,10 @@ export const TransactionsProvider = ({ children }) => {
     checkIfTransactionsExists();
   }, [transactionCount]);
 
+  const toggleMessage = () =>{
+    setErrorMessage("");
+  }
+
   return (
     <TransactionContext.Provider
       value={{
@@ -158,6 +165,7 @@ export const TransactionsProvider = ({ children }) => {
         formData,
       }}
     >
+      {errorMessage && <MessageDisplay message={errorMessage} onClose={toggleMessage} />}
       {children}
     </TransactionContext.Provider>
   );

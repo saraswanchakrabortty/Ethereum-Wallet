@@ -1,0 +1,63 @@
+.walletCard {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    width: 420px;
+    height: 230px;
+    z-index: 5;
+    position: relative;
+
+    >div {
+        height: inherit;
+        width: inherit;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        
+        border-radius: 20px;
+        background-image: url(../assets/gradient.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px;
+
+        .cryptoIcon {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .iconDiv {
+                width: 3.5rem;
+                height: 3.5rem;
+                border-radius: 9999px;
+                border: 1px solid var(--light);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .addressContainer {
+            p {
+                color: var(--light);
+                font-size: var(--small);
+                font-family: var(--secondaryFont);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
+
+@media (max-width: 640px){
+    .walletCard{
+        width: 100% !important;
+
+        >div{
+            min-width: 100% !important;
+            min-height: 216px !important;
+        }
+    }
+}

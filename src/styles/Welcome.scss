@@ -4,7 +4,7 @@
     justify-content: center;
     width: 100%;
     background-image: url(../assets/bg.png);
-    background-size: contain;
+    background-size:cover;
     background-blend-mode: screen;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,14 +42,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 0.75rem;
-                border-radius: 99999px;
-                
-
-                p {
-                    font-weight: 600;
-                    
-                }
             }
         }
 
@@ -61,65 +53,12 @@
             position: relative;
             gap: 20px;
 
-            .start {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                flex-direction: column;
-                width: 100%;
-                z-index: 5;
-
-                >div {
-                    display: flex;
-                    justify-content: space-between;
-                    flex-direction: column;
-                    min-width: 420px;
-                    min-height: 230px;
-                    border-radius: 20px;
-                    background-image: url(../assets/gradient.webp);
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    padding: 20px;
-
-                    .iconContainer {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: flex-start;
-
-                        .iconDiv {
-                            width: 3.5rem;
-                            height: 3.5rem;
-                            border-radius: 9999px;
-                            border: 1px solid var(--light);
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                        }
-                    }
-
-                    .addressContainer {
-                        p {
-                            color: var(--light);
-                            font-size: var(--small);
-                            font-family: var(--secondaryFont);
-                            text-transform: uppercase;
-                            letter-spacing: 2px;
-                        }
-                    }
-                }
-            }
-
             .end {
                 padding: 1.5rem;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                background-color: var(--color2T);
-                box-shadow: 0 0 2px var(--gray);
-                border-radius: 20px;
-                backdrop-filter: blur(20px);
                 z-index: 8;
 
                 input, button{
@@ -140,12 +79,6 @@
                     color: var(--light);
                     width: 100%;
                     margin-top: 0.5rem;
-                    box-shadow: 0 0 2px var(--gray);
-                    cursor: pointer;
-                    background-color: var(--color2T);
-                }
-                button:hover{
-                    background-color: var(--dak2);
                 }
             }
             &::before,&::after{
@@ -176,7 +109,7 @@
 
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
     .hero{
         
         .heroContainer{
@@ -194,18 +127,10 @@
 
 }
 
-@media (max-width: 431px) {
+@media (max-width: 640px) {
+
     .rightFlexBox{
         width: 100% !important;
-
-        .start{
-            width: 100% !important;
-
-            >div{
-                min-width: 100% !important;
-                min-height: 216px !important;
-            }
-        }
 
         &::before{
             width: 100px !important;

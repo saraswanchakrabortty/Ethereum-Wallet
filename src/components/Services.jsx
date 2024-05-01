@@ -5,7 +5,7 @@ import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
 
 const ServiceCard = ({ color, title, icon, subtitle }) => (
-  <div className="serviceCard">
+  <div className="serviceCard glassmorphism">
     <div className="iconContainer">{icon}</div>
     <div className="card">
       <h3>{title}</h3>
@@ -19,13 +19,13 @@ const Services = () => (
     <div className="flexbox">
       <div className="left">
         <h1>
-          Services that we
+          <span className="highlight">Services</span> that we
           <br />
-          continue to improve
+          continue to <span className="highlight">improve</span>
         </h1>
         <p>
-          The best choice for buying and selling your crypto assets, with the
-          various super friendly services we offer
+        Experience swift, secure, and user-friendly Ethereum transfers with us. 
+        Your go-to choice for global crypto transactions.
         </p>
       </div>
 
